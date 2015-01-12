@@ -19,7 +19,9 @@ def metadata_yaml(dist, attr, value):
     yaml_filename = os.path.join(os.path.dirname(setup_py_path), value)
     logger.debug('yaml_filename = %r', yaml_filename)
     metadata = yaml.load(file(yaml_filename, 'r'))
-    dist.metadata.author = metadata['author']
+    for keyname in metadata.keys():
+        if keyname in dist.metadata.__dict__.keys():
+            setattr(dist.metadata, keyname, metadata[keyname])
 
 
 def _get_code_object():
