@@ -18,7 +18,8 @@ def metadata_yaml(dist, attr, value):
     setup_py_path = inspect.getsourcefile(frame)
     yaml_filename = os.path.join(os.path.dirname(setup_py_path), value)
     logger.debug('yaml_filename = %r', yaml_filename)
-    metadata = yaml.load(file(yaml_filename, 'r'))
+    with open(yaml_filename) as yaml_file:
+        metadata = yaml.load(yaml_file)
     for keyname in metadata.keys():
         setattr(dist.metadata, keyname, metadata[keyname])
 
