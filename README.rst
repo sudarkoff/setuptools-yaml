@@ -3,6 +3,9 @@ setuptools-yaml
 
 Use `YAML <http://www.yaml.org/>`__ for your project description
 
+.. image:: https://travis-ci.org/sudarkoff/setuptools-yaml.svg?branch=master
+    :target: https://travis-ci.org/sudarkoff/setuptools-yaml
+
 
 Install
 =======
