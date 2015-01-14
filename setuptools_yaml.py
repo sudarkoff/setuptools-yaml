@@ -20,8 +20,7 @@ def metadata_yaml(dist, attr, value):
     logger.debug('yaml_filename = %r', yaml_filename)
     metadata = yaml.load(file(yaml_filename, 'r'))
     for keyname in metadata.keys():
-        if keyname in dist.metadata.__dict__.keys():
-            setattr(dist.metadata, keyname, metadata[keyname])
+        setattr(dist.metadata, keyname, metadata[keyname])
 
 
 def _get_code_object():
