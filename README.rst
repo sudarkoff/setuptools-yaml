@@ -34,3 +34,11 @@ Use
 The plugin will read the specified file and populate the relevant metadata fields
 of your distribution.
 
+
+See also
+========
+
+- pbr_
+
+
+.. _pbr: http://docs.openstack.org/developer/pbr/
