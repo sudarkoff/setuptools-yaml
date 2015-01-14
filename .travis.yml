@@ -1,15 +1,20 @@
 language: python
-
 sudo: false
 env:
-  - TOXENV=py26
-  - TOXENV=py27
-  - TOXENV=py33
-  - TOXENV=py34
-  - TOXENV=pypy
-
+- TOXENV=py26
+- TOXENV=py27
+- TOXENV=py33
+- TOXENV=py34
+- TOXENV=pypy
 install:
-  - travis_retry pip install tox
-
+- travis_retry pip install tox
 script:
-  - tox
+- tox
+deploy:
+  provider: pypi
+  user: sudarkoff
+  password:
+    secure: XAT91rLhwzYVdxpwVTvPTAKElhLzmezcmhfr9EAzsJxy8Gyxy7SVngq3E1PrKVD7LaSgyvTkRKplWBA01Dr2B5yoGXXMS5Dm/J02s0lY1vyKmV1HbnsJye4EHTFTOzsU3zpc4nC+KFgZ6mquq93ebtQYQ66j4XPAhbn/5BZgkkI=
+  on:
+    tags: true
+    repo: sudarkoff/setuptools-yaml
