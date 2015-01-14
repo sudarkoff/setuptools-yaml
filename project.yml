@@ -1,0 +1,19 @@
+---
+name: setuptools-yaml
+description: Use YAML file for your project metadata
+license: MIT
+keywords:
+  - distutils
+  - setuptools
+  - metadata
+  - yaml
+url: https://github.com/sudarkoff/setuptools-yaml
+author: George Sudarkoff
+author_email: george@sudarkoff.com
+repository: https://github.com/sudarkoff/setuptools-yaml
+service:
+  type: library
+scripts:
+  build: python setup.py sdist
+  test: tox
+  run: echo "testing..."
